@@ -65,7 +65,7 @@ else(alert(`Não entedi muito bem mas acho que quer disser que sim` , vitoriasJo
     case 1:
         computador = "Pedra" 
     break;
-    case 2:
+    case 2: 
         computador = "Papel"
       break;
       case 3:

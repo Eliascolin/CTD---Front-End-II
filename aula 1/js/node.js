@@ -60,13 +60,4 @@ for(let valor of series){
    console.log(valor)
 }*/
 
-
-let situacao   = confirm(`Para entrar al sistema entre- pessione ok`)
-
-if(situacao == true){
-   //redireccionar o usuario para a pagina de acesso
-
-//window.location.href = "acessoPermitido.html";
-} else{
-  // window.location.href="acessoNegado.html";
-}
+console.log(document)
