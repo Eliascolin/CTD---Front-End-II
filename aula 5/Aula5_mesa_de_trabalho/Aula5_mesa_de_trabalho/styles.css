@@ -85,6 +85,13 @@ header {
 }
 
 
+.text_dark {
+
+  color: rgb(230, 230, 230);
+
+}
+
+
 /* ------------------------------ Estilos para o tema escuro (Dark-Mode) ----------------------------------------------- */
 
 /* Os seguintes estilos são os que usaremos para aplicar o modo escuro, 
