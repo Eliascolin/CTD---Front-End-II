@@ -21,12 +21,10 @@ function cadastro(event){
 }
 
 
+
 buttonRef.addEventListener('click', () =>exibir())
 
 
-inputRef.addEventListener('keyup',(event)=>cadastro(event)
-
-
-)
+inputRef.addEventListener('keyup',(event)=>cadastro(event))
 
 

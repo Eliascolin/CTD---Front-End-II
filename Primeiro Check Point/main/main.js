@@ -14,60 +14,67 @@ let inputDescriçao = document.querySelector(".input_descriçao")
 
 let botonForm = document.querySelector(".botonForm")
 
-let card = document.querySelector(".tex_formulario")
+
  
+class Avatar {
+
+    constructor (nome,sobreNome,img,text){
 
 
+        
+    this.nome = nome,
+
+    this.sobreNome = sobreNome,
+ 
+     this.img = img,
+     
+     this.text = text
+    }
 
 
-function cadastro(nome,sobreNome,img,text1){
+}
+
+let avatarNovo = []
+
+
+function cadastro(nome,sobreNome,img,text){
+
 let Nome = nome.target.value
 
 let SobreNome = sobreNome.target.value
 
 let Img = img.target.value
 
-let Text1 = text1.target.value
 
-    class Avatar {
-
-        constructor (nome,sobreNome,img,text1){
-    
-    
-            
-        this.nome = nome,
-    
-        this.sobreNome = sobreNome,
-     
-         this.img = img,
-         
-         this.text1 = text1
-        }
-    
-    
-    }
+  
     const usuarioAvatar = {
     
-        avatarNovo:[],
+        
        
-       adicionarAluno(nome,sobreNome,img,text1){
-       const avatar = new Avatar (nome,sobreNome,img,text1)
+       adicionarAluno(nome,sobreNome,img,text){
+       const avatar = new Avatar (nome,sobreNome,img,text)
        this.avatarNovo.push(avatar)
        }}
 
-       
+       nome.target.value
 
-       usuarioAvatar.adicionarAluno(Nome,SobreNome,Img,Text1)
+       usuarioAvatar.adicionarAluno(Nome,SobreNome,Tmg,text)
       
-       console.log(usuarioAvatar.avatarNovo)
+
+}
+
+function enviar (){
+
+console.log(avatarNovo)
 
 }
 
 
-
-
 inputNomeRef.addEventListener('keyup',(nome)=>cadastro(nome))
+
 inputSobrenome.addEventListener('keyup',(sobreNome)=>cadastro(sobreNome))
-inputImagem.addEventListener('keyup',(img)=>cadastro(img))
-inputDescriçao.addEventListener('keyup',(text)=>cadastro(text))
-botonForm.addEventListener('click',()=>exivir())
+
+
+ inputImagem.addEventListener('keyup',(img)=>cadastro(img))
+
+
