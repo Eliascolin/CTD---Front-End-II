@@ -12,69 +12,61 @@ let inputImagem = document.querySelector(".input_imagem")
 
 let inputDescriçao = document.querySelector(".input_descriçao")
 
+
+
+
 let botonForm = document.querySelector(".botonForm")
 
-
- 
-class Avatar {
-
-    constructor (nome,sobreNome,img,text){
+let formularioRef = document.querySelector("#section_avartar")
 
 
-        
-    this.nome = nome,
-
-    this.sobreNome = sobreNome,
- 
-     this.img = img,
-     
-     this.text = text
-    }
 
 
-}
+function valores (){
 
-let avatarNovo = []
+ let nome  = inputNomeRef.value
 
+ let sobrenome =  inputSobrenome.value
 
-function cadastro(nome,sobreNome,img,text){
+ let img = inputImagem.value
 
-let Nome = nome.target.value
+ let descricao = inputDescriçao.value
 
-let SobreNome = sobreNome.target.value
+ formularioRef.classList.add("section_avartar")
 
-let Img = img.target.value
-
-
-  
-    const usuarioAvatar = {
-    
-        
-       
-       adicionarAluno(nome,sobreNome,img,text){
-       const avatar = new Avatar (nome,sobreNome,img,text)
-       this.avatarNovo.push(avatar)
-       }}
-
-       nome.target.value
-
-       usuarioAvatar.adicionarAluno(Nome,SobreNome,Tmg,text)
-      
-
-}
-
-function enviar (){
-
-console.log(avatarNovo)
-
+ formularioRef.innerHTML +=`
+ <div class="card_avatar">
+ <img src="${img}" class="avatar-img-top" alt="...">
+ <div class="text-description">
+   <h2 class="card-nome">${nome}</h2>
+   <h3 class="card-apelido">${sobrenome}</h3>
+   <p class="carde-descricao">${descricao}</p>
+ </div>
+</div>
+ `
 }
 
 
-inputNomeRef.addEventListener('keyup',(nome)=>cadastro(nome))
 
-inputSobrenome.addEventListener('keyup',(sobreNome)=>cadastro(sobreNome))
-
-
- inputImagem.addEventListener('keyup',(img)=>cadastro(img))
+botonForm.addEventListener('click',()=> valores())
 
 
+
+
+
+
+
+
+
+
+
+
+// let containerRef = document.querySelector(".container")
+
+// const posts = [
+// {
+// image:"./imagens/tiger.jpg",
+// titulo:'O tigre',
+// texto: 'O tigre (Panthera tigris) é uma das espécies da subfamília Pantherinae (família Felidae pertencente ao gênero Panthera. É encontrado de forma nativa apenas no continente asiático; é um predador carnívoro e é a maior espécie de felino do mundo junto com o leão.',
+
+// },]

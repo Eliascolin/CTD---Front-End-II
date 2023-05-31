@@ -130,11 +130,6 @@ function getPosts(){
 
 
       createCards()
-
-
-
-
-
 }
 
 
@@ -151,6 +146,10 @@ containerRef.innerHTML +=`
 </div>
 `
 }
+
+
+
+
 }
 
 getPosts()
