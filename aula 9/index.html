@@ -14,7 +14,7 @@
 
 <h1>Login</h1>
 
-<div class="form-control      error">
+<div class="form-control  "  id="formControlNome">
     <label for="userNameInput">nome</label>
     <input type="text"
      id="userNameInput"
@@ -24,8 +24,21 @@
     
      >
 
-
+<small>Por favor, prencher o campo corretamente</small>
 </div>
+
+
+<div class="form-control  "  id="formControlPassword">
+    <label for="userPasswordInput">senha</label>
+    <input type="password"
+     id="userNameInput"
+     required 
+     minlength="8"   
+    id="formControlPassword"
+     >
+
+<small>Por favor, prencher o campo Senha</small>
+</div>  
 <button type="submit"  id="logingButton"> Entrar</button>
 
 
