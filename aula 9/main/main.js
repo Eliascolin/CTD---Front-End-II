@@ -1,16 +1,20 @@
 const userNameInputRef = document.querySelector("#userNameInput")
 
+const logingButtonRef = document.querySelector("#logingButton")
 
 
 
 function validateUserName(event){
+const target = event.target
+const value = target.value
+const isValid = target.checkValidity()
 
-const value = event.target.value
 
-console.log(event.target.checkValidity())
-if(event.target.checkValidity()){
-// if(value.length > 5 && value.length <24){
-// console.log("Valor invalido")
+
+console.log(value)
+
+if(isValid){
+console.log("Valor invalido")
 
 
 }else{
@@ -20,3 +24,8 @@ if(event.target.checkValidity()){
 
 
 userNameInputRef.addEventListener('keyup', (event)=>validateUserName(event))
+                                                       
+
+
+                                                          //evita que se comporte default
+logingButtonRef.addEventListener("click",(event) => {event.preventDefault()})
