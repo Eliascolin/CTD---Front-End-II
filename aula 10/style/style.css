@@ -1,0 +1,47 @@
+
+.form-control{
+
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+/* a mensagem nao aparece */
+
+.form-control input{
+background-color: rgb(158, 154, 154);
+border: none;
+
+}
+
+.form-control  small{
+display: none;
+color: rgb(224, 106, 106) ;
+
+
+}
+
+.error{
+
+
+
+
+
+}
+
+
+.error input{
+
+
+background-color: rgb(224, 106, 106);
+
+}
+
+/* aparece a mensagem */
+
+.error small {
+
+display: block;
+
+}
+

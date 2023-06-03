@@ -2,27 +2,60 @@
 
 //https://www.figma.com/file/XMNFWdQDJOsHjogi2t4dhu/%5BReDesign%5D-Check-Point-1-(Front-end-2)?type=design&node-id=901-87&t=cIhnaY3aP4KlfBEb-0
 
-//https://www.google.com/search?q=avatar+de+pessoas&sxsrf=APwXEddrKKnvKV4vQJTmh8FPvB1zmtJyJQ:1685403091765&source=lnms&tbm=isch&sa=X&ved=2ahUKEwia4Nnk15v_AhUTBLkGHYyeC3YQ_AUoAXoECAEQAw&biw=1366&bih=617&dpr=1#imgrc=I0Kzpk2VHNzArM
-
-let inputNomeRef = document.querySelector(".input_nome")
-
-let inputSobrenome = document.querySelector(".input_sobrenome")
-
-let inputImagem = document.querySelector(".input_imagem")
-
-let inputDescriçao = document.querySelector(".input_descriçao")
 
 
+let inputNomeRef = document.querySelector("#input_nome")
 
+let inputSobrenome = document.querySelector("#input_sobrenome")
+
+let inputImagem = document.querySelector("#input_imagem")
+
+let inputDescriçao = document.querySelector("#input_descricao")
 
 let botonForm = document.querySelector(".botonForm")
 
 let formularioRef = document.querySelector("#section_avartar")
 
+const mensagemErro = document.querySelector(".erro_mensagem");
 
 
 
-function valores (){
+let formaHasError = {
+  nome: true,
+  sobrenome: true,
+  imagemAvatar: true,
+  descricao: true
+}
+
+
+  
+/// avaliar os imput
+function validarInput(event){
+  const target = event.target
+  const isValid = target.checkValidity()
+
+  if(isValid){
+
+    target.classList.remove("error")
+    formaHasError[target.name] = false
+    target.nextElementSibling.textContent = ""
+
+}else{
+  target.nextElementSibling.textContent = "Valor inválido";
+  formaHasError[target.name] = true
+  target.classList.add("error")
+    
+}
+
+
+
+disabledButtonErro()
+
+}
+
+
+// enviar formulario
+function sentForm (){
 
  let nome  = inputNomeRef.value
 
@@ -46,27 +79,31 @@ function valores (){
  `
 }
 
+//deshabilitar botao
+function disabledButtonErro(){
+  
+
+  if(!formaHasError.nome && !formaHasError.sobrenome && !formaHasError.imagemAvatar && !formaHasError.descricao){
+  
+    botonForm.disabled = false
+     
+  }else{
+  
+    botonForm.disabled = true
+    
+  }
+  
+  
+  
+  
+  }
 
 
-botonForm.addEventListener('click',()=> valores())
+inputNomeRef.addEventListener("keyup",(event)=>validarInput(event))
+inputSobrenome.addEventListener("keyup",(event)=>validarInput(event))
+inputImagem.addEventListener("keyup",(event)=>validarInput(event))
+inputDescriçao.addEventListener("keyup",(event)=>validarInput(event))
+
+botonForm.addEventListener('click',()=> sentForm())
 
 
-
-
-
-
-
-
-
-
-
-
-// let containerRef = document.querySelector(".container")
-
-// const posts = [
-// {
-// image:"./imagens/tiger.jpg",
-// titulo:'O tigre',
-// texto: 'O tigre (Panthera tigris) é uma das espécies da subfamília Pantherinae (família Felidae pertencente ao gênero Panthera. É encontrado de forma nativa apenas no continente asiático; é um predador carnívoro e é a maior espécie de felino do mundo junto com o leão.',
-
-// },]

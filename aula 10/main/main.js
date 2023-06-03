@@ -2,8 +2,6 @@ const userNameInputRef = document.querySelector("#userNameInput")
 
 const logingButtonRef = document.querySelector("#logingButton")
 
-const formControlNomeRef = document.querySelector("#formControlNome")
-
 const formControlPasswordRef = document.querySelector("#formControlPassword")
 
 
@@ -24,6 +22,8 @@ password:""
 
 
 }
+
+
 
 
 // funçao senha
@@ -59,36 +59,75 @@ disabledButtonErro()
 
 
 // funçao usuario
-function validateUserName(event){
+// function validateUserName(event){
+//     const target = event.target
+//     const value = target.value
+//     const isValid = target.checkValidity()
+//     const parent = target.parentNode
+    
+    
+//     user.name = value
+    
+//     if(isValid){
+    
+//     parent.classList.remove("error")
+    
+//     formaHasError.name = false
+
+    
+    
+//     }else{
+//         console.log("valor valido")
+    
+//         parent.classList.add("error")
+    
+//         formaHasError.name = true
+//     }
+
+//   disabledButtonErro()
+
+// }
+    
+    
+function validadeImput(event){
+
     const target = event.target
-    const value = target.value
-    const isValid = target.checkValidity()
+    // const value = target.value
+    // const isValid = target.checkValidity()
+    // const parent = target.parentNode
     
     
+    // user.name = value
+    console.log(target.name)
+
+    user[target.name] = value
+
     
-    user.name = value
+//     if(isValid){
     
-    if(isValid){
+//     parent.classList.remove("error")
     
-    formControlNomeRef.classList.remove("error")
-    
-    formaHasError.name = false
+//     formaHasError.name = false
 
     
     
-    }else{
-        console.log("valor valido")
+//     }else{
+//         console.log("valor valido")
     
-        formControlNomeRef.classList.add("error")
+//         parent.classList.add("error")
     
-        formaHasError.name = true
-    }
+//         formaHasError.name = true
+//     }
 
-  disabledButtonErro()
+//   disabledButtonErro()
+
+
+
+
 
 }
-    
-    
+
+
 // funçao botao 
     function login(event){
 
@@ -118,12 +157,14 @@ if(!formaHasError.name && !formaHasError.password ){
 }
 
 
-userNameInputRef.addEventListener('keyup', (event)=>validateUserName(event))
+
+
+userNameInputRef.addEventListener('keyup', (event)=>validadeImput(event))
           
 
 //configurar senha 
 
-formControlPasswordRef.addEventListener("keyup",(event)=>validateUserPassword(event))
+formControlPasswordRef.addEventListener("keyup",(event)=>validadeImput(event))
 
 
                                                           //evita que se comporte default

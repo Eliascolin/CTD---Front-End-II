@@ -23,7 +23,7 @@
 
 
        
-    </div>
+   
 
 
 </section>
@@ -31,28 +31,92 @@
 
 
 <section class="formulario">
-
-
-
-
-<div class="div_form">
-
     <h1 class="tex_formulario">Cria teu usuario</h1>
+    
+    <div class="div_formulario">
+
+
+          <!-- Nome -->
+        <div class="div_form">
+
+
+            <input 
+            required
+            name="nome"
+            minlength="4"  
+            maxlength="25"
+            type="text" placeholder="Digita o nome"
+            id="input_nome" >
+    
+           <small class="erro_mensagem"></small>
+            
+        </div>
+    
+
+        <!-- Sobre nome -->
+        <div class="div_form">
+    
+            <input
+            
+            required
+            minlength="2" 
+            name="sobrenome"
+            type="text"
+            placeholder="Digita o sobre nome" 
+           id="input_sobrenome">
+    
+           <small class="erro_mensagem"></small>
+        </div>
+    
+
+              <!-- Imagem -->
+        <div class="div_form">
+    
+            <input 
+            required
+            minlength="2"
+            type="text"
+             name="imagemAvatar" 
+             id="input_imagem"
+              placeholder="Coloca um link com uma imagem">
+    
+           <small class="erro_mensagem"></small>
+    
+        </div>
+
+             <!-- descrição -->
+        <div class="div_form">
+
+
    
-    <input type="text" placeholder="Digita o nome" class="input_nome" >
+
+   
+            <input 
+            name="descricao" 
+            required
+            minlength="4"  
+            maxlength="25"
+            type="text" 
+            id="input_descricao" placeholder="Conta para a gente um pouco sobre teu avatar ">
+           <small class="erro_mensagem"></small>
+        
+        </div>
+        
+        <button class="botonForm">Enviar</button>
+
+
+    </div>
+ 
+
+  
+
 
     
-    <input type="text" placeholder="Digita o sobre nome" class="input_sobrenome" >
+   
 
 
     
-    <input type="url" name="imagem_avatar" class="input_imagem" placeholder="Coloca um link com uma imagem">
-
-
-   
-    <input type="text" name="descriçao" class="input_descriçao" placeholder="Conta para a gente um pouco sobre teu avatar ">
-
-    <button class="botonForm">Enviar</button>
+    
 
 
 
