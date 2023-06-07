@@ -19,7 +19,7 @@ let formularioRef = document.querySelector("#section_avartar")
 const mensagemErro = document.querySelector(".erro_mensagem");
 
 
-
+//coferir se os input estao com erro 
 let formaHasError = {
   nome: true,
   sobrenome: true,
@@ -31,24 +31,28 @@ let formaHasError = {
   
 /// avaliar os imput
 function validarInput(event){
-  const target = event.target
+  const target = event.target.trim()
   const isValid = target.checkValidity()
 
   if(isValid){
-
+//adicionar clase de error
     target.classList.remove("error")
     formaHasError[target.name] = false
     target.nextElementSibling.textContent = ""
 
 }else{
+
+  //mensagem de erro no small
   target.nextElementSibling.textContent = "Valor inválido";
+
+  // caso seja invalido formaHasError para true a propiedade eque estiver com erro
   formaHasError[target.name] = true
   target.classList.add("error")
     
 }
 
 
-
+// chamada da funçao disabledButtonErro que  deshabilita o  botao
 disabledButtonErro()
 
 }
@@ -77,6 +81,8 @@ function sentForm (){
  </div>
 </div>
  `
+ formularioRef.scrollIntoView()
+
 }
 
 //deshabilitar botao
@@ -99,11 +105,20 @@ function disabledButtonErro(){
   }
 
 
+
+//aplicar validarInput no input nome
 inputNomeRef.addEventListener("keyup",(event)=>validarInput(event))
+
+//aplicar validarInput no input Sobre nome
 inputSobrenome.addEventListener("keyup",(event)=>validarInput(event))
+
+//aplicar validarInput no input Img
 inputImagem.addEventListener("keyup",(event)=>validarInput(event))
+
+//aplicar validarInput no input descriçao
 inputDescriçao.addEventListener("keyup",(event)=>validarInput(event))
 
+//aplicar sentForm no botão
 botonForm.addEventListener('click',()=> sentForm())
 
 
